@@ -21,7 +21,8 @@ Windows
 `venv/Scripts/activate`
 
 
-Simply run:
+
+To install dependencies simply run:
 `pip install -r requirements.txt`
 
 Which should take care of installing all of the requirements for you.
