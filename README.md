@@ -1,6 +1,7 @@
 # United Remote User Manager Example API
 
-This project was made for the competence test provided by United Remote
+This project was made for the competence test provided by United Remote.
+The database used for this project was sqlite3
 
 ## Requirements
 Python 3.11 (although it could possibly work on lower python3 versions)
