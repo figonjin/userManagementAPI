@@ -9,6 +9,17 @@ python-pip
 
 ## Setup
 Ideally, you want to set up a virtual environment for this, and activate it.
+cd to the root folder of the project and run:
+`virtualenv venv`
+
+And to activate it:
+
+Linux
+`source venv/Scripts/activate`
+
+Windows
+`venv/Scripts/activate`
+
 
 Simply run:
 `pip install -r requirements.txt`
