@@ -4,6 +4,7 @@ This project was made for the competence test provided by United Remote
 
 ## Requirements
 Python 3.11 (although it could possibly work on lower python3 versions)
+
 python-pip
 
 ## Setup
@@ -76,13 +77,27 @@ Multiple Users
 To modify a user, simply provide a json payload that matches the creation format, i.e.
 `{"name": "SomeNewName"}`
 
+## Tests
+
+To run the solitary unit test, execute the following command:
+
+`pytest application\tests\unit_tests`
+
+There is no need to start up the API for the unit test.
+
+To run the functional tests, make sure you do start the API beforehand, and in a separate CLI session run:
+
+`pytest application\tests\functional_tests\`
+
 ## Troubleshooting
 If, after installing the dependencies from requirements.txt, running main.py or tests results in a ModuleNotFoundError, make sure to add the project's root folder to your pythonpath:
 
-`Linux`
+Linux
+
 `export PYTHONPATH=$PYTHONPATH:/absolute/path/to/project`
 
-`Windows`
+Windows
+
 `set PYTHONPATH=%PYTHONPATH%;absolute/path/to/project`
 
 
@@ -96,3 +111,4 @@ If you have issues with port 5000, change the port to a desired one in line 23 o
 - The print output in functional tests could be improved a bit
 - There is no db cleanup for functional tests, in case they fail unexpectedly. For test_create_valid_user this means that should the user be created but fail to be validated, they need to currently be removed from the database by hand (fastest way is to remove the entire DB and re-initialize it by restarting the Flask app)
 - While input is being sanitized (both for SQL and XSS) more security would be needed to not even allow posting such data into the DB in the first place
+- Normally the functional tests would be their own, separate project. But for the sake of brevity I elected to make them a part of the project proper
